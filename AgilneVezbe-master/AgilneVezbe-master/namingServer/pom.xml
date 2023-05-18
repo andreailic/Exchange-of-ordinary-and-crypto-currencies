@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>utility.microservices</groupId>
-	<artifactId>namingServer</artifactId>
+	<artifactId>naming-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>namingServer</name>
 	<description>Demo project for Spring Boot</description>
@@ -52,6 +52,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>andreailic/2023-${project.artifactId}:${project.version}</name>
+					</image>
+					<pullPolicy>
+						IF_NOT_PRESENT
+					</pullPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
