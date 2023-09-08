@@ -1,0 +1,98 @@
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10001,'EUR','RSD',117);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10002,'USD','RSD',120);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10003,'GBP','RSD',140);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10004,'CHF','RSD',115);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10005,'RUB','RSD',8);
+
+
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10006,'RSD','EUR',117);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10007,'USD','EUR',120);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10008,'GBP','EUR',140);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10009,'CHF','EUR',115);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10010,'RUB','EUR',8);
+
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10011,'EUR','USD',117);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10012,'RSD','USD',120);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10013,'GBP','USD',140);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10014,'CHF','USD',115);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10015,'RUB','USD',8);
+
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10016,'EUR','GBP',117);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10017,'USD','GBP',120);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10018,'RSD','GBP',140);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10019,'CHF','GBP',115);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10020,'RUB','GBP',8);
+
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10021,'EUR','CHF',117);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10022,'USD','CHF',120);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10023,'GBP','CHF',140);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10024,'RSD','CHF',115);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10025,'RUB','CHF',8);
+
+
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10021,'EUR','RUB',117);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10022,'USD','RUB',120);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10023,'GBP','RUB',140);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10024,'RSD','RUB',115);
+
+insert into currency_exchange(id,currency_from,currency_to,conversion_multiple)
+values(10025,'CHF','RUB',8);
+
+

@@ -1,0 +1,55 @@
+package transferService;
+
+import java.math.BigDecimal;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TransferServiceController {
+	
+	@Autowired
+	BankAccountProxy bankAccountProxy;
+	@Autowired
+	UsersServiceProxy usersServiceProxy;
+	@Autowired
+	CryptoWalletProxy cryptoWalletProxy;
+	
+	@GetMapping("/transfer-service-feign")
+	public ResponseEntity<?> getTransferFeign(@RequestParam String currency, @RequestParam String to, @RequestParam double quantity,@RequestHeader("Authorization") String authorizationHeader){
+		try {
+			String role = usersServiceProxy.extractRole(authorizationHeader);
+			String email=usersServiceProxy.getEmailOfCurrentUser(authorizationHeader);
+			double fee = quantity*0.01;
+			BigDecimal amount = new BigDecimal(quantity);
+			BigDecimal fees = new BigDecimal(fee);
+			BigDecimal transferAmount = amount.add(fees);
+			
+			
+			
+			if ("USER".equals(role)) {
+			boolean posible = bankAccountProxy.getConversionPosibility(email, transferAmount, currency);
+			if(posible) {
+				bankAccountProxy.updateCurrencyAmount(email, to, amount);
+				String responseMessage = "Prenos se izvrsava sa naloga sa email-om " + email + " u iznosu " + quantity + " " +currency + " na nalog sa email-om" + to;
+				return new ResponseEntity.status<>(HttpStatus.OK).body(responseMessage);
+				
+				
+			}else {
+				return ResponseEntity.status(HttpStatus.CONFLICT).body("Korisnik nema dovoljno sredstava za razmenu.");
+			}
+			
+		}else {
+            String errorMessage = "Korisnik koji nije User ne moze da izvrsi razmenu.";
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorMessage);
+        }
+
+		} catch(FeignException e) {
+			return ResponseEntity.status(e.status()).body(e.getMessage());
+		}
+	}
+
+}
